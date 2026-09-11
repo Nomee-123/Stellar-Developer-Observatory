@@ -61,8 +61,8 @@ only on `stellar-xdr` and optionally `serde` — neither can perform I/O — and
 manifest carries a comment saying so.
 
 This is honest but not airtight: a future dependency could smuggle I/O in. A CI
-check that inspects the resolved dependency tree for the core crate is
-[tracked as an issue](https://github.com/The-Big-Danny/Stellar-Developer-Observatory/labels/help%20wanted).
+check that inspects the resolved dependency tree for the core crate is tracked
+in [issue #3](https://github.com/The-Big-Danny/Stellar-Developer-Observatory/issues/3).
 
 ## If you need data the engine does not have
 

@@ -105,7 +105,8 @@ contract's spec, which is retrievable on-chain. As far as our research found,
 > omit an auth entry, truncate a footprint, let an entry expire, under-declare
 > resources, and return a contract error.
 >
-> **Any category without a fixture is not implementable.**
+> **Any category without a fixture is not implementable.** Tracked in
+> [issue #1](https://github.com/The-Big-Danny/Stellar-Developer-Observatory/issues/1).
 
 Target rules: missing/invalid authorization entry, footprint entry missing,
 archived entry requiring restore, resource limit exceeded, insufficient resource

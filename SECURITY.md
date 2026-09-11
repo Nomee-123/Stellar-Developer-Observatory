@@ -48,8 +48,9 @@ allocation, or a non-terminating loop.
 > **Note on decode limits.** Decoding currently uses `Limits::none()`. This is
 > appropriate for responses fetched from an RPC endpoint you chose to trust, but
 > it means a hostile *response* could request a very large allocation. Applying
-> explicit depth and length limits is tracked as a hardening task. Treat a
-> demonstrated resource exhaustion as a valid report.
+> explicit depth and length limits is tracked in
+> [issue #2](https://github.com/The-Big-Danny/Stellar-Developer-Observatory/issues/2).
+> Treat a demonstrated resource exhaustion as a valid report.
 
 ### It makes outbound network requests
 
