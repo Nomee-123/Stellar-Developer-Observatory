@@ -44,8 +44,9 @@ jobs:
       matrix:
         # `stable` catches new lints and regressions; the pinned version is the
         # MSRV declared in Cargo.toml and must keep working for contributors who
-        # are not on the newest toolchain.
-        rust: [stable, "1.85"]
+        # are not on the newest toolchain. 1.88 is the real floor: serde_with, pulled
+        # in via stellar-xdr's serde feature, requires it.
+        rust: [stable, "1.88"]
     steps:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master

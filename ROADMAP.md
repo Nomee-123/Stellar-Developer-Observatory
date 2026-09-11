@@ -53,7 +53,7 @@ Delivered:
   both `TransactionMeta` V3 and V4
 - `sdo` CLI with `explain`, including `--fixture` for fully offline use
 - 40 tests, all passing, **none requiring network access**
-- CI running fmt, clippy (`-D warnings`), and tests on stable and MSRV
+- CI running fmt, clippy (`-D warnings`), and tests on stable and MSRV (1.88)
 - README, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, LICENSE, architecture docs
 
 The engine runs end to end and reports honestly that it cannot yet attribute a

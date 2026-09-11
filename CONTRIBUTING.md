@@ -8,7 +8,7 @@ saying so. Documentation gaps are real issues.
 
 ## Quick start
 
-Requires **Rust 1.85 or newer** (`rustup update stable`).
+Requires **Rust 1.88 or newer** (`rustup update stable`).
 
 ```bash
 git clone https://github.com/The-Big-Danny/Stellar-Developer-Observatory

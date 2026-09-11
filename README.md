@@ -106,7 +106,7 @@ the alternative.
 
 ## Try it
 
-Requires Rust 1.85 or newer.
+Requires Rust 1.88 or newer.
 
 ```bash
 git clone https://github.com/The-Big-Danny/Stellar-Developer-Observatory
