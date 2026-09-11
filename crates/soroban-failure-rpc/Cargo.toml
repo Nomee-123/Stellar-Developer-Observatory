@@ -1,0 +1,23 @@
+[package]
+name = "soroban-failure-rpc"
+description = "Stellar RPC access and XDR decoding for Soroban failure analysis."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["stellar", "soroban", "rpc", "xdr"]
+categories = ["development-tools::debugging"]
+
+[dependencies]
+soroban-failure-analysis.workspace = true
+stellar-xdr.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+ureq.workspace = true
+
+[lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
