@@ -1,0 +1,24 @@
+[package]
+name = "sdo"
+description = "Stellar Developer Observatory command line interface."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "sdo"
+path = "src/main.rs"
+
+[dependencies]
+soroban-failure-analysis.workspace = true
+soroban-failure-rpc.workspace = true
+clap.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+
+[lints.rust]
+unsafe_code = "forbid"
