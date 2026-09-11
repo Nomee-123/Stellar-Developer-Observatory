@@ -1,0 +1,27 @@
+[package]
+name = "soroban-failure-analysis"
+description = "Pure, deterministic analysis engine for failed Soroban transactions. No I/O."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["stellar", "soroban", "debugging", "xdr"]
+categories = ["development-tools::debugging"]
+
+# INVARIANT: this crate performs no network, filesystem, clock, or environment
+# access. Every dependency below must be pure data manipulation. Adding a
+# dependency that can perform I/O is a breaking change to the crate's contract
+# and will be rejected in review. See docs/architecture/purity.md.
+[dependencies]
+stellar-xdr.workspace = true
+serde = { workspace = true, optional = true }
+
+[features]
+default = ["serde"]
+serde = ["dep:serde", "stellar-xdr/serde"]
+
+[lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
