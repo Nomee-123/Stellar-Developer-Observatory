@@ -1,0 +1,37 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/soroban-failure-analysis",
+    "crates/soroban-failure-rpc",
+    "crates/sdo",
+    "tools/rpc-probe",
+]
+
+[workspace.package]
+version = "0.1.0-alpha.1"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT"
+repository = "https://github.com/The-Big-Danny/Stellar-Developer-Observatory"
+homepage = "https://github.com/The-Big-Danny/Stellar-Developer-Observatory"
+authors = ["Stellar Developer Observatory contributors"]
+
+[workspace.dependencies]
+# Canonical Stellar XDR definitions. Pinned to a single version across the
+# workspace so every crate decodes against the same protocol revision.
+stellar-xdr = { version = "28.0.0", default-features = false, features = [
+    "std",
+    "base64",
+] }
+
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+clap = { version = "4.5", features = ["derive"] }
+ureq = { version = "3.1", features = ["json"] }
+
+soroban-failure-analysis = { path = "crates/soroban-failure-analysis", version = "0.1.0-alpha.1" }
+soroban-failure-rpc = { path = "crates/soroban-failure-rpc", version = "0.1.0-alpha.1" }
+
+[profile.release]
+strip = true
