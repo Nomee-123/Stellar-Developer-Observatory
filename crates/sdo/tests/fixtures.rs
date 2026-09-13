@@ -308,8 +308,6 @@ fn deliberately_mismatched_metadata_fails_validation() {
     let mut metadata: serde_json::Value =
         serde_json::from_str(&std::fs::read_to_string(dir.join("metadata.json")).unwrap()).unwrap();
 
-    let original_hash = metadata["transaction_hash"].clone();
-
     metadata["transaction_hash"] = serde_json::Value::String("deliberately-wrong-hash".to_string());
 
     let probe: serde_json::Value =
