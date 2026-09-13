@@ -244,15 +244,13 @@ fn run() -> Result<std::process::ExitCode, Box<dyn std::error::Error>> {
             writeln!(f, "{}", serde_json::to_string_pretty(&result)?)?;
 
             let passphrase = network_passphrase(&client);
-            let report = probe_transaction(&rpc, passphrase, &tx, &result);
+            let report = probe_transaction(&rpc, passphrase.clone(), &tx, &result);
             let meta_path = out.join("probe.json");
             std::fs::write(&meta_path, serde_json::to_string_pretty(&report)?)?;
 
             let metadata = FixtureMetadata {
                 transaction_hash: tx.clone(),
-                network: passphrase
-                    .clone()
-                    .ok_or("RPC response did not provide a network passphrase")?,
+                network: passphrase.ok_or("RPC response did not provide a network passphrase")?,
                 ledger: report
                     .ledger
                     .ok_or("probe report did not provide a ledger")?,
